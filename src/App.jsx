@@ -1,35 +1,23 @@
-import { IconBrandTwitter, IconBrandFacebook } from '@tabler/icons-react';
-import clsx from 'clsx';
+import Card from './components/Card';
+import Button from './components/Button';
 
-export default function App() {
+const App = () => {
   return (
-    <div className={'bg-slate-600 grid place-content-center  min-h-screen'}>
-      <div className={'flex gap-x-2'}>
-        <Button onClick={() => console.log('Hello Register')} type='submit'>
-          <IconBrandFacebook />
-          Register
-        </Button>
-        <Button className={'bg-red-400'}>
-          <IconBrandTwitter />
-          Login
-        </Button>
+    <div className={'bg-slate-100 text-slate-800 tracking-tight antialiased flex items-center justify-center min-h-screen'}>
+      <div className={'max-w-xl w-full'}>
+        <Card>
+          <Card.Title>Hello React!</Card.Title>
+          <Card.Body>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi atque eius numquam obcaecati quia modi, rerum architecto. Enim eos tenetur
+            fuga, placeat ratione, earum numquam maiores libero, amet quisquam doloremque?
+          </Card.Body>
+          <Card.Footer>
+            <Button>Register</Button>
+          </Card.Footer>
+        </Card>
       </div>
     </div>
   );
-}
+};
 
-function Button(props) {
-  const { className = 'bg-blue-600', children, text, type = 'button' } = props;
-  return (
-    <button
-      {...props}
-      type={type}
-      className={clsx(
-        className,
-        '[&>svg]:w-5 [&>svg]:h-5 [&>svg]:stroke-1 bg-blue-600 text-white px-2 py-2 rounded flex items-center gap-x-2'
-      )}
-    >
-      {text || children}
-    </button>
-  );
-}
+export default App;
